@@ -1,0 +1,121 @@
+// Assign Colors into variables
+:root {
+    // main Colors
+    --Gray-Blue: hsl(240, 18%, 77%);
+    --D-Blue: #202046;
+}
+
+// Styles for body and slider
+body {
+    background: url("../imgs/pattern-curve.svg") no-repeat left bottom;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // Slider Style
+    .slider {
+        .row {
+            .grid {
+                height: 80vh;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                // Left Section (Slider Text)
+                &.silder_text{
+                    position: relative;
+                    .qoutes {
+                        content: '';
+                        position: absolute;
+                        top: 20%;
+                        left: 15%;
+                    }
+                    p {
+                        color: var(--D-Blue);
+                        font-size: 29px;
+                        font-weight: 300;
+                        position: relative;
+                        width: 130%;
+                        z-index: 10;
+                    }
+                    h3 {    
+                            color: var(--D-Blue);
+                            font-size: 16px;
+                            font-weight: bold;
+                            margin-top: 30px;
+                        span {
+                            font-weight: 300;
+                            color: var(--Gray-Blue);
+                        }
+                    }
+                }
+                // Right Section (Slider Image)
+                &.slider_image {
+                    background: url("../imgs/pattern-bg.svg") no-repeat center center;
+                    background-size: cover;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    .image {
+                        background: url("../imgs/image-tanya.jpg") no-repeat center center;
+                        background-size: cover;
+                        width: 80%;
+                        height: 80%;
+                        box-shadow: 5px 25px 30px rgba(#202046, .2);
+                        &:last-child {
+                            background: url("../imgs/image-john.jpg") no-repeat center center;
+                        }
+                    }
+                    // Slider Controls
+                    .controls {
+                        background-color: #fff;
+                        border-radius: 50px;
+                        content: '';
+                        position: absolute;
+                        width: 100px;
+                        height: 45px;
+                        left: 20%;
+                        bottom: 30px;
+                        a {
+                            margin: 0 15px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+// Medium Screens
+@media (max-width: 991px) {
+    .silder_text{
+        .qoutes {
+            top: 10% !important;
+        }
+    }
+}
+
+// Small Screens
+@media (max-width: 768px) {
+    .carousel {
+        padding: 10px;
+        .silder_text{
+            text-align: center;
+            p {
+                width: 100% !important;
+            }
+        }
+        &.slider_image {
+            .image {
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+
